@@ -1,0 +1,88 @@
+<html lang="en">
+<head><style>
+    <div style="width: 100%; height: 100%; background: #374760"></div>
+    </style>
+    </head>
+  <meta charset="UTF-8">
+  <title>Text Conversion</title>
+  <script>
+    function convertText() {
+      var conversionTable = {
+        "A": "RRVO ",
+    "a": "RRVO ",
+    "B": "VYRY ",
+    "b": "VYRY ",
+    "C": "UYYU ",
+    "c": "UYYU ",
+    "D": "ROUY ",
+    "d": "ROUY ",
+    "E": "YORU ",
+    "e": "YORU ",
+    "F": "OOUU ",
+    "f": "OOUU ",
+    "G": "ORYR ",
+    "g": "ORYR ",
+    "H": "YURU ",
+    "h": "YURU ",
+    "I": "YUYU ",
+    "i": "YUYU ",
+    "J": "OOYY ",
+    "j": "OOYY ",
+    "K": "URRY ",
+    "k": "URRY ",
+    "L": "ROYU ",
+    "l": "ROYU ",
+    "M": "ROYR ",
+    "m": "ROYR ",
+    "N": "UUOY ",
+    "n": "UUOY ",
+    "O": "UUUU ",
+    "o": "UUUU ",
+    "P": "OOUY ",
+    "p": "OOUY ",
+    "Q": "YROY ",
+    "q": "YROY ",
+    "R": "OOYU ",
+    "r": "OOYU ",
+    "S": "ROUY ",
+    "s": "ROUY ",
+    "T": "UURU ",
+    "t": "UURU ",
+    "U": "YUUU ",
+    "u": "YUUU ",
+    "V": "OOYY ",
+    "v": "OOYY ",
+    "W": "UORY ",
+    "w": "UORY ",
+    "X": "RRYY ",
+    "x": "RRYY ",
+    "Y": "OOYO ",
+    "y": "OOYO ",
+    "Z": "UYOU ",
+    "z": "UYOU ",
+      };
+
+      var userInput = document.getElementById("inputText").value;
+      var convertedText = "";
+
+      for (var i = 0; i < userInput.length; i++) {
+        var char = userInput.charAt(i);
+        if (char in conversionTable) {
+          convertedText += conversionTable[char];
+        } else {
+          convertedText += char;
+        }
+      }
+
+      document.getElementById("convertedText").innerHTML = "Converted text: " + convertedText;
+    }
+  </script>
+</head>
+<body>
+  <h1>Text Conversion</h1>
+  <label for="inputText">Enter text to convert:</label>
+  <input type="text" id="inputText">
+  <button onclick="convertText()">Convert</button>
+  <p id="convertedText"></p>
+</body>
+</html>
